@@ -7,6 +7,7 @@ import CreateProductsService from '@modules/products/services/CreateProductsServ
 import DeleteProductsService from '@modules/products/services/DeleteProductsService';
 import ListAllProductsSevice from '@modules/products/services/ListAllProductsSevice';
 import UpdateProductsService from '@modules/products/services/UpdateProductsService';
+import ShowProductService from '@modules/products/services/ShowProductService';
 
 export default class ProductsController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -59,6 +60,15 @@ export default class ProductsController {
 
     const deletedProduct = await productsService.execute({ id, privilege });
 
-    return response.json(deletedProduct);
+    return response.json({ messagem: `${deletedProduct} deleted register` });
+  }
+
+  public async show(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+    const productsService = container.resolve(ShowProductService);
+
+    const showProduct = await productsService.execute({ id });
+
+    return response.json(classToClass(showProduct));
   }
 }
