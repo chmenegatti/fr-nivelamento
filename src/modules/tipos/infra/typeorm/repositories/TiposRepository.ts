@@ -23,4 +23,10 @@ export default class TiposRepository implements ITiposRepository {
   public async save(tipo: Tipos): Promise<Tipos> {
     return this.ormRepository.save(tipo);
   }
+
+  public async index(): Promise<Tipos[]> {
+    const getTipos = await this.ormRepository.find({ order: { tipo: 'ASC' } });
+
+    return getTipos;
+  }
 }

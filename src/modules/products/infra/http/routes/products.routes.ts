@@ -23,6 +23,7 @@ productsRoutes.post(
   productsController.create,
 );
 productsRoutes.get('/', productsController.index);
+productsRoutes.get('/:id', productsController.show);
 productsRoutes.put(
   '/:id',
   celebrate({

@@ -16,4 +16,6 @@ tiposRouter.post(
   tiposController.create,
 );
 
+tiposRouter.get('/', tiposController.index);
+
 export default tiposRouter;
