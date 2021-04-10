@@ -29,7 +29,7 @@ Este backend conta com as tecnologias abaixo:
 
 ## 02. Criando o container do banco de Dados
 1. Com o docker instalado (siga instruções do desenvolvedor) crie o contaner seguindo o comando abaixo
-2. `docker run --name interview -e POSTGRES_USER=seu_usuario -e POSTGRES_PASSWORD=sua_senha -p 5432:5432 -d postgres
+2. `docker run --name interview -e POSTGRES_USER=seu_usuario -e POSTGRES_PASSWORD=sua_senha -p 5432:5432 -d postgres` 
 3. Aguarde a criação do container.
 
 ### 03. Configurando o BackEnd
