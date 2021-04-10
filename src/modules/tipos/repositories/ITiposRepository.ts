@@ -5,4 +5,6 @@ export default interface ITiposRepository {
   create(tipoData: ICreateTiposDTO): Promise<Tipos>;
 
   save(tipo: Tipos): Promise<Tipos>;
+
+  index(): Promise<Tipos[]>;
 }
