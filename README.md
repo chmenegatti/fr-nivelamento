@@ -22,29 +22,34 @@ Este backend conta com as tecnologias abaixo:
 
 ## 01. Início
 
-1. Clone este repositório usando `https://github.com/chmenegatti/omnistack08-tindev.git`
-2. Move yourself to the appropriate directory: `cd tindev`<br />
-3. Run `yarn` to install dependencies<br />
+1. Crie uma pasta chamada nivelamento e acesse a pasta. `mkdir nivelamento && nivelamento` (Linux/Mac) ou `md nivelamento` e `cd nivelamento` (Windows)<br/>
+2. Clone este repositório usando `git clone https://github.com/chmenegatti/fr-nivelamento.git server`<br/>
+3. Acesse a pasta: `cd server`<br />
+3. Digite `yarn` para instalar as dependências<br />
 
-### 02. Starting with backend server
+## 02. Criando o container do banco de Dados
+1. Com o docker instalado (siga instruções do desenvolvedor) crie o contaner seguindo o comando abaixo
+2. docker run --name interview -e POSTGRES_USER=seu_usuario -e POSTGRES_PASSWORD=sua_senha -p 5432:5432 -d postgres 
+3. Aguarde a criação do container.
 
-1. Move yourself to the backend folder: `cd backend`
-2. Create a `.env` file and add the MongoDB url connection in MONGO_URL field
-3. Run `yarn dev` to start the server
+### 03. Configurando o BackEnd
 
-### 03. Starting with the frontend app
+1. Vá para a pasta: `cd server`
+2. Abra o arquivo ormconfig.json
+3. Coloque o username e password que usou na criação do container.
+4. Crie o bando de dados `interview`com o comando: `yarn typeorm query "CREATE DATABASE interview`.
+5. Com o DBeaver instalado, crie a conexão com Container e acesse o banco criado.
+6. Se tudo estiver ok, inicie o servidor com o comando `yarn dev:server`;
 
-1. Move yourself to the frontend folder: `cd frontend`
-2. Run `yarn start` to start the web application
+### 04. Criando o tipos para os usuários.
 
-### 04. Starting with the mobile app
-
-1. Move yourself to the mobile folder: `cd mobile`
-2. Run `react-native run-ios` (or `run-android` if your prefer) to start the mobile app
-
-Note: If you choose to start the mobile app in the android emulator, you will have to start the emulator before using
-the `run-android` command.
-
+1. Abra o Insomnia
+2. Em preferências - DATA - Clique em Import Data - From File e abra o arquivo `Insomnia_2021-04-09.json`
+3. As rotas do insomnia serão criads.
+4. Na Pasta Tipos - Clique na Rota Create
+5. No corpo da requisição digite Administrador no tipo e clique em send
+6. Faça o mesmo para Comum.
+7. Na Pasta Categories Create - Crie algumas categorias de produtos.
 
 ## License
 
