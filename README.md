@@ -39,7 +39,8 @@ Este backend conta com as tecnologias abaixo:
 3. Coloque o username e password que usou na criação do container.
 4. Crie o bando de dados `interview`com o comando: `yarn typeorm query "CREATE DATABASE interview`.
 5. Com o DBeaver instalado, crie a conexão com Container e acesse o banco criado.
-6. Se tudo estiver ok, inicie o servidor com o comando `yarn dev:server`;
+6. Após a criação do banco, executar as migrations: `yarn typeorm migration:run`
+7. Se tudo estiver ok, inicie o servidor com o comando `yarn dev:server`;
 
 ### 04. Criando o tipos para os usuários.
 
