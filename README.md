@@ -19,6 +19,9 @@ Este backend conta com as tecnologias abaixo:
 - 💹 **Node Js** — Frameword baseado em JavaScript
 - 📄 **PostgreSQL** — Banco de dados Relacional
 - TS **TypeScript** — Superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem
+- Injeção de Dependências com tsyringe
+- Uso de decorators
+- Princípios do SOLID
 
 ## 01. Início
 
